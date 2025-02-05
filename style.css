@@ -2,7 +2,7 @@ body {
     font-family: "Inter", serif;
     position: relative;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -18,7 +18,8 @@ body {
     width: 100%;
     height: 75px;
     background-color: var(--main-color--);
-    
+    /* display: flex; */
+    /* justify-content: space-between; */
 }
 .content {
     display: flex;
@@ -212,8 +213,8 @@ body {
     top: 50%;
     left: -20%;
 }
-.features .card span {
-    font-size: 90px;
+.features .card img {
+    width: 100px;
     margin-top: 10px;
 }
 .features .card p {
@@ -268,7 +269,9 @@ body {
 }
 .cards .boxes {
     display: flex;
+    justify-content: center;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 .cards .box,
 .cards .box .content,
@@ -281,6 +284,7 @@ body {
 }
 .cards .box {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 20px;
 }
 .cards .box:not(:last-child) {
     margin-right: 40px;
@@ -354,6 +358,7 @@ body {
 /* start energy cards */
 .energy-cards {
     background-color: #fffcf4;
+    margin-right: -30px;
 }
 .energy-cards,
 .energy-cards .icon,
@@ -365,6 +370,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    /* align-items: center; */
 }
 .energy-cards,
 .energy-cards .icon,
@@ -416,12 +422,20 @@ body {
 .feedback {
     display: flex;
 }
+.energy-cards .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .energy-cards .cards .card ,
 .values .cards .card {
     border: 1px solid var(--main-color--);
     padding: 20px;
     text-align: left;
     background-color: #f5f8ef;
+    margin-bottom: 20px;
+}
+.energy-cards .cards .card {
+    width: 300px;
 }
 .energy-cards .cards .card:not(:last-child),
 .values .cards .card:not(:last-child) {
@@ -444,6 +458,10 @@ body {
 
 /* end energy cards */
 /* start values */
+.values .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .values .cards .card,
 .feedback .card {
     background-color: #f5fbf9;
@@ -517,7 +535,7 @@ body {
 .feedback .comment .name,
 .feedback .icons {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 .feedback .name {
@@ -663,3 +681,125 @@ body {
 }
 
 /* end footer */
+
+/* media queries */
+@media screen and (max-width: 991px) {
+    .features .img-holder {
+        margin-left: 80px;
+    }
+    .features .heads {
+        display: none;
+    }
+    .features .img-holder .card {
+        top: 30%;
+    }
+    .repairs .overlay {
+        top: 28%;
+        left: 20%;
+    }
+    .feedback {
+        flex-direction: column;
+        align-items: center; 
+        margin-right: 70px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .navbar .logo img {
+        margin-left: 12px;
+    }
+    .navbar .phone {
+        display: none;
+    }
+    .navbar .links a {
+        margin: auto;
+        font-size: 10px;
+    }
+    .landing .text {
+        width: 350px;
+    }
+    .landing .text h1 {
+        font-size: 35px;
+    }
+    .landing .buttons {
+        margin-top: 30px;
+    }
+    .landing .call {
+        margin-bottom: 10px;
+    }
+    .features {
+        padding: 60px 30px;
+    }
+    .features .container {
+        flex-direction: column;
+    }
+    .features .text {
+        width: 300px;
+    }
+    .features .img-holder {
+       display: none;
+    }
+    .sketch .content h2 {
+        font-size: 30px;
+    }
+    .sketch p {
+        width: 375px;
+    }
+    .sketch .content {
+        padding-left: 30px;
+        width: 275px;
+    }
+    .sketch .content p {
+        font-size: 18px;
+    }
+    .cards .container p {
+        width: 300px;
+        margin-left: -20px;
+    }
+    .repairs .overlay {
+        left: 7%;
+        top: 20%;
+        padding: 20px;
+        width: 300px;
+    }
+    .repairs .overlay h2 {
+        font-size: 18px;
+    }
+    .repairs .overlay p {
+        width: 300px;
+    }
+    .energy-cards {
+        margin-right: 20px;
+    }
+    .energy-cards .text h2 {
+        font-size: 30px;
+    }
+    .energy-cards .text p {
+        width: 320px;
+    }
+    .feedback .card,
+    .feedback .card p {
+        width: 300px;
+    }
+    .feedback .comment .name .text {
+        align-items: normal;
+    }
+    .feedback .comment .icons {
+        display: none;
+    }
+    .footer .img-link img {
+        width: 80px;
+    }
+    
+    .footer .sub input {
+        width: 200px;
+        margin-left: 10px;
+    }
+    .footer .sub p {
+        font-size: 12px;
+    }
+    
+    .footer .copy {
+       flex-direction: column; 
+    }
+}
